@@ -43,7 +43,7 @@ exports.updateTodo = (req, res) => {
 exports.deleteTodo = (req, res) => {
     db.Todo.findByIdAndDelete({ _id: req.params.todoId })
         .then((deletedTodo) => {
-            res.status(200).json(deletedTodo)
+            res.status(200).json({message: 'We deleted it!.'});
         })
         .catch((err) => {
             res.send(err)
